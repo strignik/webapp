@@ -1,0 +1,45 @@
+<!--<div ng-controller="videoController" layout="row">
+    <div class="content">
+        <md-content class="md-padding">
+            <md-card style="float: left" class="md-whiteframe-5dp"
+                     md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch
+                     ng-repeat="video in user.videos">
+                <video width="320" height="240" controls>
+                    <source src="{{video.src}}" type="video/mp4">
+                </video>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">{{video.name}}</span>
+                        <span class="md-subhead">{{video.description}}</span>
+                        <span class="md-subhead">{{video.date}}</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button>click</md-button>
+                </md-card-actions>
+            </md-card>
+        </md-content>
+    </div>
+
+
+</div>-->
+<div ng-controller="videoController" layout = "row">
+    <div flex="10"></div>
+    <md-grid-list flex
+            md-cols-gt-md="3"
+            md-row-height="2:2"
+            md-gutter="20px" md-gutter-gt-sm="50px">
+
+        <md-grid-tile style="background-color: #b3d4fc" class=" md-whiteframe-z2 " ng-repeat="video in user.videos">
+            <video width="320" height="240" controls>
+                <source src="{{video.src}}" type="video/mp4">
+            </video>
+            <md-grid-tile-footer style="background-color: #a6c4ee">
+                <span class="md-headline">{{video.name}}</span>
+                <span class="md-subhead">{{video.description}}</span>
+                <span class="md-subhead">{{video.date}}</span>
+            </md-grid-tile-footer>
+        </md-grid-tile>
+    </md-grid-list>
+    <div flex="10"></div>
+</div>

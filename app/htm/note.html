@@ -1,0 +1,20 @@
+<div ng-controller="videoController" text-center>
+    <center>
+        <div class="content">
+            <md-content class="md-padding">
+                <md-card style="float: left" class="md-whiteframe-5dp" md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch ng-repeat="video in user.videos">
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">{{video.name}}</span>
+                            <span class="md-subhead">{{video.description}}</span>
+                            <span class="md-subhead">{{video.date}}</span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-actions layout="row" layout-align="end center">
+                        <md-button>click</md-button>
+                    </md-card-actions>
+                </md-card>
+            </md-content>
+        </div>
+    </center>
+</div>

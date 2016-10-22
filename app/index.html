@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="app" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="app" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" href="app.css">
+    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+</head>
+<body ng-app="app" ng-cloak >
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+<div ng-controller="navbarController">
+    <md-toolbar>
+        <div class="md-toolbar-tools md-whiteframe-z1 move-up" layout="row" layout-align="center center">
+            <div flex="40">
+                <img src="img/icons/logo.png">
+            </div>
+            <div flex="25" ng-controller="buttonController">
+                <md-button class="md-icon-button md-raised" aria-label="Settings" ng-click="go('/timeline')">
+                    <md-icon md-svg-icon="img/icons/timeline.svg"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button md-raised" aria-label="Settings" ng-click="go('/photo')">
+                    <md-icon md-svg-icon="img/icons/photo-camera.svg"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button md-raised" aria-label="Settings" ng-click="go('/video')">
+                    <md-icon md-svg-icon="img/icons/video-camera.svg"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button md-raised" aria-label="Settings" ng-click="go('/note')">
+                    <md-icon md-svg-icon="img/icons/note.svg"></md-icon>
+                </md-button>
+            </div>
+            <div flex="20" layout="row" layout-align="end center">
+                <h1 style="color: white; font-family: Georgia">{{name}}</h1>
+                <md-button ng-click="toggleRight()" ng-hide="isOpenRight()" class="md-icon-button md-raised fa-pulse"
+                           aria-label="Settings">
+                    <md-icon md-svg-icon="img/icons/settings.svg"></md-icon>
+                </md-button>
+            </div>
+        </div>
+
+    </md-toolbar>
+</div>
+
+<md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
+
+    <md-toolbar class="md-theme-light">
+        <h1 class="md-toolbar-tools" style="color: white; font-family: Georgia">Settings</h1>
+    </md-toolbar>
+    <md-content ng-controller="RightCtrl" layout-padding>
+        <form>
+
+        </form>
+        <md-button ng-click="close()" class="md-primary">
+            Close Sidenav Right
+        </md-button>
+    </md-content>
+
+</md-sidenav>
+
+    <div ng-view >
+
+    </div>
+
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+<script src="bower_components/angular/angular.js"></script>
+<script src="../node_modules/"></script>
+
+<script src="bower_components/angular-route/angular-route.js"></script>
+
+<!-- Angular Material requires Angular.js Libraries -->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+<!-- Angular Material Library -->
+<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+<script src="app.js"></script>
+
+
+</body>
+</html>
